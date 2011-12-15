@@ -1,3 +1,3 @@
 require 'mkmf'
 $libs = append_library($libs, "supc++")
-create_makefile('heyes-astar')
+create_makefile('heyes')

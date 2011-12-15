@@ -1,7 +1,6 @@
 $: << File.join(File.expand_path(File.dirname(__FILE__)), '..')
 require "castar"
-
-include Heyes
+include Castar
 
 describe "astar pathfinding wrapper" do
   it "should load a map" do

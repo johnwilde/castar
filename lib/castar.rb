@@ -1,6 +1,6 @@
 require "castar/version"
 
 module Castar
-  require 'heyes-astar'
-  include Heyes
+  require 'heyes' # the .bundle file
+  include Heyes   # so we don't have to specify Castar::Heyes:: ...
 end
