@@ -1,4 +1,6 @@
 *.gem
-.bundle
+*.bundle
 Gemfile.lock
 pkg/*
+*.o
+Makefile

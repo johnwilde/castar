@@ -97,6 +97,21 @@ tells you where it is.  You can then cd to that directory and run the tests as a
 
 I followed the instructions [here](https://github.com/radar/guides/blob/master/gem-development.md) for using Bundler to create the gem.
 
+
+To run the benchmarks:
+
+        bundle install
+        cd swig/
+        ./buildRubyExtension.sh
+        cd ../benchmarks
+        bundle exec ruby -I . ./benchmarker.rb
+
+                                                          BIG_OBSTACLE | SMALL_OBSTACLES |
+        ----------------------------------------------------------------------------------
+        using polaris                                            1.150 |           0.468 |
+        using c++ implementation                                 0.034 |           0.079 |
+        using c++ implementation, eight neighbors                0.010 |           0.014 |
+
 ## INSTALL:
 
 * gem install castar

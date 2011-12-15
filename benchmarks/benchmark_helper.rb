@@ -1,4 +1,3 @@
-require 'time'
 require 'ruby-prof'
 require 'polaris'
 require 'two_d_grid_map'

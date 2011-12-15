@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Castar::VERSION
   s.authors     = ["John Wilde"]
   s.email       = ["johnwilde@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/johnwilde/castar"
   s.summary     = %q{Ruby interface to a C++ implementation of the A* algorithm}
   s.description = File.read(File.join(File.dirname(__FILE__), 'README.markdown'))
 
@@ -23,4 +23,8 @@ Gem::Specification.new do |s|
   # s.add_runtime_dependency "rest-client"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-core"
+  s.add_development_dependency "ruby-prof"
+  s.add_development_dependency "pry"
+  s.add_development_dependency "polaris"
+  s.add_development_dependency "rbench"
 end
