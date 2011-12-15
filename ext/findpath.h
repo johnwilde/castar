@@ -113,6 +113,9 @@ class HeyesDriver{
      EIGHT_NEIGHBORS
    };
 
+   MapSearchNode nodeStart;
+   MapSearchNode nodeEnd;
+
    double timeElapsed;
 
     HeyesDriver(Map* map, int numMoves=FOUR_NEIGHBORS )
@@ -145,12 +148,10 @@ class HeyesDriver{
       while(SearchCount < NumSearches)
       {
         // Create a start state
-        MapSearchNode nodeStart;
         nodeStart.x = startx; 
         nodeStart.y = starty;
 
         // Define the goal state
-        MapSearchNode nodeEnd;
         nodeEnd.x = goalx; //rand()%MAP_WIDTH;						
         nodeEnd.y = goaly; //rand()%MAP_HEIGHT; 
 

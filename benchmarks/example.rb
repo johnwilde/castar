@@ -23,3 +23,15 @@ end
 #startx,starty,goalx,goaly=0,0,89,89
 #runner=AstarBenchmark.new(startx,starty,goalx,goaly, {:debug =>true, :print_path =>true, :profile =>false})
 #runner.test_heyes(mapfile)
+require 'castar'
+include Castar
+map = init_map(:width => 4, :height => 3)
+astar = HeyesDriver.new(map, HeyesDriver::EIGHT_NEIGHBORS)
+astar.run(0,0,3,2)
+puts get_map_with_path(astar)
+
+map = load_map('map_20.txt')
+astar = HeyesDriver.new(map, HeyesDriver::EIGHT_NEIGHBORS)
+astar.run(0,0,19,19)
+puts get_map_with_path(astar)
+

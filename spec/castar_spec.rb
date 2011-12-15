@@ -6,7 +6,7 @@ describe "astar pathfinding wrapper" do
   it "should load a map" do
     num_column = 4
     num_row = 2
-    map = Map.new(num_column, num_row)
+    map = init_map(:width => num_column, :height => num_row)
     map.height.should eq(num_row)
     map.width.should eq(num_column)
 
@@ -45,19 +45,20 @@ describe "astar pathfinding wrapper" do
   end
 
   before :each do
-    nrow = 2
-    ncol = 4
-    a = Array.new(nrow).fill( Array.new(ncol).fill(1) )
-    @map = Map.new(ncol, nrow)
-    a.each_with_index do |row, y| 
-      row.each_with_index do |cost, x|
-        @map.setCost(x,y,cost)
-      end
-    end
+    @map = init_map(:width => 4, :height => 2)
     @startx = 0
     @starty = 0
     @goalx = 3
     @goaly = 0
+  end
+
+  it "should allow access to start and goal nodes" do
+    driver = HeyesDriver.new(@map)
+    driver.run(@startx, @starty, @goalx, @goaly)
+    driver.nodeStart.x.should eq @startx
+    driver.nodeStart.y.should eq @starty
+    driver.nodeEnd.x.should eq @goalx
+    driver.nodeEnd.y.should eq @goaly
   end
 
   it "should find a path when start and goal are the same" do
@@ -93,14 +94,14 @@ describe "astar pathfinding wrapper" do
     path.length.should eq(6)
   end
 
+  it "should load mapfile and find path" do
+    map =load_map('./spec/map_20.txt')
+    astar = HeyesDriver.new(map, HeyesDriver::EIGHT_NEIGHBORS)
+    astar.run(0,0,19,19)
+    astar.getPathLength.should eq 28 
+  end
+
   it "should have tests for memory management"
 
-  def get_path( driver )
-    path = [];
-    (0..driver.getPathLength-1).each do |i|
-      path << {:x => driver.getPathXAtIndex(i), :y => driver.getPathYAtIndex(i)}
-    end
-    path
-  end
 end
 

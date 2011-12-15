@@ -10,8 +10,51 @@ The C++ implementaion is found here <http://code.google.com/p/a-star-algorithm-i
 
 ## SYNOPSIS:
 
-  See `spec\castar_spec.rb` for usage examples.
+See `spec\castar_spec.rb` for usage examples.
 
+Create an empty map and plan a path across it:
+
+        require 'castar'
+        include Castar
+        map = init_map(:width => 4, :height => 3)
+        astar = HeyesDriver.new(map, HeyesDriver::EIGHT_NEIGHBORS)
+        astar.run(0,0,3,2)
+        puts get_map_with_path(astar)
+
+        |S|1|1|1|
+        |1|*|1|1|
+        |1|1|*|G|
+        
+
+Load a map from a text file and plan a path:
+
+        map = load_map('./spec/map_20.txt')
+        astar = HeyesDriver.new(map, HeyesDriver::EIGHT_NEIGHBORS)
+        astar.run(0,0,19,19)
+        puts get_map_with_path(astar)
+
+        
+        |S|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|
+        |1|*|*|*|*|*|1|1|1|1|1|1|1|1|1|1|1|1|1|1|
+        |1|1|9|9|9|9|*|1|1|1|1|9|9|9|9|9|9|9|9|9|
+        |1|1|9|9|9|9|1|*|1|1|1|9|9|9|9|9|9|9|9|9|
+        |1|1|9|9|9|9|1|1|*|1|1|9|9|9|9|9|9|9|9|9|
+        |1|1|9|9|9|9|1|1|1|*|1|9|9|9|9|9|9|9|9|9|
+        |1|1|9|9|9|9|1|1|1|1|*|9|9|9|9|9|9|9|9|9|
+        |1|1|9|9|9|9|1|1|1|1|*|9|9|9|9|9|9|9|9|9|
+        |1|1|1|1|1|1|1|1|1|1|*|9|9|9|9|9|9|9|9|9|
+        |1|1|1|1|1|1|1|1|1|1|*|9|9|9|9|9|9|9|9|9|
+        |1|1|1|1|1|1|1|1|1|1|1|*|1|1|1|1|1|1|1|1|
+        |1|1|1|1|1|1|1|1|1|1|1|1|*|*|*|*|*|1|1|1|
+        |1|1|1|1|1|9|9|9|9|9|9|9|9|9|9|9|9|*|1|1|
+        |1|1|1|1|1|9|9|9|9|9|9|9|9|9|9|9|9|1|*|1|
+        |1|1|1|1|1|9|9|9|9|9|9|9|9|9|9|9|9|1|1|*|
+        |1|1|1|1|1|9|9|9|9|9|9|9|9|9|9|9|9|1|1|*|
+        |1|1|1|1|1|9|9|9|9|9|9|9|9|9|9|9|9|1|1|*|
+        |1|1|1|1|1|9|9|9|9|9|9|9|9|9|9|9|9|1|1|*|
+        |1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|*|
+        |1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|G|
+        
 ## REQUIREMENTS:
 
 * Ruby 1.9 

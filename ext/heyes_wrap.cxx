@@ -2632,6 +2632,114 @@ free_MapSearchNode(MapSearchNode *arg1) {
 swig_class cHeyesDriver;
 
 SWIGINTERN VALUE
+_wrap_HeyesDriver_nodeStart_set(int argc, VALUE *argv, VALUE self) {
+  HeyesDriver *arg1 = (HeyesDriver *) 0 ;
+  MapSearchNode *arg2 = (MapSearchNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_HeyesDriver, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nodeStart" "', argument " "1"" of type '" "HeyesDriver *""'"); 
+  }
+  arg1 = reinterpret_cast< HeyesDriver * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_MapSearchNode, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "nodeStart" "', argument " "2"" of type '" "MapSearchNode *""'"); 
+  }
+  arg2 = reinterpret_cast< MapSearchNode * >(argp2);
+  if (arg1) (arg1)->nodeStart = *arg2;
+  
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_HeyesDriver_nodeStart_get(int argc, VALUE *argv, VALUE self) {
+  HeyesDriver *arg1 = (HeyesDriver *) 0 ;
+  MapSearchNode *result = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_HeyesDriver, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nodeStart" "', argument " "1"" of type '" "HeyesDriver *""'"); 
+  }
+  arg1 = reinterpret_cast< HeyesDriver * >(argp1);
+  result = (MapSearchNode *)& ((arg1)->nodeStart);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_MapSearchNode, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_HeyesDriver_nodeEnd_set(int argc, VALUE *argv, VALUE self) {
+  HeyesDriver *arg1 = (HeyesDriver *) 0 ;
+  MapSearchNode *arg2 = (MapSearchNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_HeyesDriver, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nodeEnd" "', argument " "1"" of type '" "HeyesDriver *""'"); 
+  }
+  arg1 = reinterpret_cast< HeyesDriver * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_MapSearchNode, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "nodeEnd" "', argument " "2"" of type '" "MapSearchNode *""'"); 
+  }
+  arg2 = reinterpret_cast< MapSearchNode * >(argp2);
+  if (arg1) (arg1)->nodeEnd = *arg2;
+  
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_HeyesDriver_nodeEnd_get(int argc, VALUE *argv, VALUE self) {
+  HeyesDriver *arg1 = (HeyesDriver *) 0 ;
+  MapSearchNode *result = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_HeyesDriver, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nodeEnd" "', argument " "1"" of type '" "HeyesDriver *""'"); 
+  }
+  arg1 = reinterpret_cast< HeyesDriver * >(argp1);
+  result = (MapSearchNode *)& ((arg1)->nodeEnd);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_MapSearchNode, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_HeyesDriver_timeElapsed_set(int argc, VALUE *argv, VALUE self) {
   HeyesDriver *arg1 = (HeyesDriver *) 0 ;
   double arg2 ;
@@ -3514,6 +3622,10 @@ SWIGEXPORT void Init_heyes(void) {
   rb_define_method(cHeyesDriver.klass, "initialize", VALUEFUNC(_wrap_new_HeyesDriver), -1);
   rb_define_const(cHeyesDriver.klass, "FOUR_NEIGHBORS", SWIG_From_int(static_cast< int >(HeyesDriver::FOUR_NEIGHBORS)));
   rb_define_const(cHeyesDriver.klass, "EIGHT_NEIGHBORS", SWIG_From_int(static_cast< int >(HeyesDriver::EIGHT_NEIGHBORS)));
+  rb_define_method(cHeyesDriver.klass, "nodeStart=", VALUEFUNC(_wrap_HeyesDriver_nodeStart_set), -1);
+  rb_define_method(cHeyesDriver.klass, "nodeStart", VALUEFUNC(_wrap_HeyesDriver_nodeStart_get), -1);
+  rb_define_method(cHeyesDriver.klass, "nodeEnd=", VALUEFUNC(_wrap_HeyesDriver_nodeEnd_set), -1);
+  rb_define_method(cHeyesDriver.klass, "nodeEnd", VALUEFUNC(_wrap_HeyesDriver_nodeEnd_get), -1);
   rb_define_method(cHeyesDriver.klass, "timeElapsed=", VALUEFUNC(_wrap_HeyesDriver_timeElapsed_set), -1);
   rb_define_method(cHeyesDriver.klass, "timeElapsed", VALUEFUNC(_wrap_HeyesDriver_timeElapsed_get), -1);
   rb_define_method(cHeyesDriver.klass, "run", VALUEFUNC(_wrap_HeyesDriver_run), -1);
