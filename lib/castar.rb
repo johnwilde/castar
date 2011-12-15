@@ -1,6 +1,6 @@
 require "castar/version"
 
 module Castar
-  require 'heyes'
+  require 'heyes-astar'
   include Heyes
 end
